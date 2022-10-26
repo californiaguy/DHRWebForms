@@ -31,13 +31,20 @@ namespace DHRWebForms
 
         protected void butnSubmit_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand command = con.CreateCommand();
-            command.CommandType = System.Data.CommandType.Text;
-            command.CommandText = "Insert into PatientSurveys(FirstName,LastName,staff,clean,food,nurses,noise)Values('" + textBox1.Text + "','" + textBox2.Text + "','" + RadioButtonList1.SelectedValue + "' , '" + RadioButtonList2.SelectedValue + "' , '" + RadioButtonList3.SelectedValue + "' , '" + RadioButtonList4.SelectedValue + "' , '" + RadioButtonList5.SelectedValue + "')";
-            command.ExecuteNonQuery();
-            con.Close();
-            Response.Redirect("Default2.aspx");
+            if (Page.IsValid)
+            {
+                con.Open();
+                SqlCommand command = con.CreateCommand();
+                command.CommandType = System.Data.CommandType.Text;
+                command.CommandText = "Insert into PatientSurveys(FirstName,LastName,staff,clean,food,nurses,noise)Values('" + textBox1.Text + "','" + textBox2.Text + "','" + RadioButtonList1.SelectedValue + "' , '" + RadioButtonList2.SelectedValue + "' , '" + RadioButtonList3.SelectedValue + "' , '" + RadioButtonList4.SelectedValue + "' , '" + RadioButtonList5.SelectedValue + "')";
+                command.ExecuteNonQuery();
+                con.Close();
+                Response.Redirect("Default2.aspx");
+            }
+            else
+            {
+               
+            }
 
 
         }

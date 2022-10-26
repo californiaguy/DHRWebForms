@@ -7,10 +7,11 @@
 <head runat="server">
    
     <title>Thank You For Your Feedback!</title>
+     <link href="Style2.css" rel="stylesheet" />
 </head>
 <body>
         <div class="greeting">
-            <asp:Literal ID="lGreeting" runat="server" />
+            <h2> Thank you for your Feedback!</h2>
         </div>
 </body>
 </html>
